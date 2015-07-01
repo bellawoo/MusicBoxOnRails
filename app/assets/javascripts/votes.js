@@ -1,5 +1,5 @@
 $(document).on("ready", function() {
-  $(".vote-buttons").on("click", castVote)
+  $("button").on("click", castVote)
 })
 
 var errorHandler = function() {
@@ -10,6 +10,7 @@ var castVote = function () {
   $.ajax("/", {
     method: "GET",
     error: errorHandler,
-    success: $(".voter").load("/vote .voter > *")
+    success: alert('success!')
+    // success: $(".voter").load("/vote .voter > *")
   })
 }

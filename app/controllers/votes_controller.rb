@@ -10,6 +10,7 @@ class VotesController < ApplicationController
     #   status 400
     end
     # redirect_to ("/")
-    render json: { status: :ok }
+    render status: 200
+    # render :nothing => true
   end
 end
