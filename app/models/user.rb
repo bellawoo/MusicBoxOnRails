@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
 
   serialize :spotify_data, JSON
 
+  def num_of_songs_suggested_this_week
+    suggested_songs.where('created_at >= ?', 1.week.ago).count
+  end
+  
 end
