@@ -10,7 +10,7 @@ var castVote = function () {
   $.ajax("/", {
     method: "GET",
     error: errorHandler,
-    success: alert('success!')
-    // success: $(".voter").load("/vote .voter > *")
+    // success: $("#voter").load("/vote #voter")
+    success: $("#voter").load("/vote #voter > *")
   })
 }

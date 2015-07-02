@@ -24,9 +24,9 @@
           <button class="upvote">△</button>
         </form>
       <% end %>
-      <div class = "voter">
-      <%= song.total_votes %>
-    </div>
+      <div id= "voter">
+        <%= song.total_votes %>
+      </div>
       <% if current_user %>
         <%= form_tag "/vote", :remote => true %>
            <input type= "hidden" name= "song_title" value="<%=song.title%>">
