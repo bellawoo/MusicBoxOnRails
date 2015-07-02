@@ -7,10 +7,11 @@ var errorHandler = function() {
 }
 
 var castVote = function () {
-  $.ajax("/", {
+  $.ajax("/song/total", {
     method: "GET",
     error: errorHandler,
-    // success: $("#voter").load("/vote #voter")
-    success: $("#voter").load("/vote #voter > *")
+    success: function () {
+      // $("#voter").load("/vote #voter > *")
+    }
   })
 }

@@ -34,8 +34,7 @@ class SongsController < ApplicationController
   end
 
   def letter
-        results = []
-
+    results = []
     Song.all.each do |song|
       if song.title.downcase.start_with? params[:letter].downcase
         song_as_hash = {
@@ -57,4 +56,9 @@ class SongsController < ApplicationController
     return sorted_results.to_json
   end
 
+  def total
+    @song = Song.find(params[:id])
+    @song.total_votes
+    render json: { status: :ok }
+  end
 end

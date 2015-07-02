@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post "/suggest_song"   => "songs#new",      as: :new_song
   get  "/about_song/:id" => "songs#show",     as: :song
   get  "/songs/:letter"  => "songs#letter",    as: :song_letter
+  get  "/song/total"     => "songs#total",    as: :total_votes
   
   post "/vote"           => "votes#new",      as: :new_vote
   
