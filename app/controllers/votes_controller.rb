@@ -9,8 +9,7 @@ class VotesController < ApplicationController
     #   flash[:alert] = "You are out of votes!"
     #   status 400
     end
-    redirect_to ("/")
-    # render status: 200
-    # render :nothing => true
+    # redirect_to ("/")
+    head :ok
   end
 end

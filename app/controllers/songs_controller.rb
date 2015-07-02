@@ -57,8 +57,8 @@ class SongsController < ApplicationController
   end
 
   def total
-    @song = Song.find(params[:id])
+    @song = Song.find(params[:song_id])
     @song.total_votes
-    render json: { status: :ok }
+    render json: { total: @song.total_votes }
   end
 end

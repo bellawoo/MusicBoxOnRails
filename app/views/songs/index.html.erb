@@ -24,7 +24,7 @@
           <button class="upvote">△</button>
         </form>
       <% end %>
-      <div id= "voter">
+      <div class= "voter" data-song-id="<%= song.id %>">
         <%= song.total_votes %>
       </div>
       <% if current_user %>

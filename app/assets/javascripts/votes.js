@@ -1,5 +1,5 @@
 $(document).on("ready", function() {
-  $("button").on("click", castVote)
+  $("form").on("ajax:success", castVote)
 })
 
 var errorHandler = function() {
@@ -7,11 +7,15 @@ var errorHandler = function() {
 }
 
 var castVote = function () {
+  var vote_count = $(this).siblings(".voter")
   $.ajax("/song/total", {
     method: "GET",
+    data: {
+      song_id: $(".voter").data("song-id")
+    },
     error: errorHandler,
-    success: function () {
-      // $("#voter").load("/vote #voter > *")
+    success: function (data) {
+      vote_count.text(data.total)
     }
   })
 }
